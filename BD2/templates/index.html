@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Films - Star Wars DB {% endblock %}
+{% block content %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Director</th>
+        <th scope="col">ReleaseDate</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for film in films %}
+        <tr>
+          <th scope="row">{{ film.Title | title }}</th>
+          <td>{{ film.Director | title }}</td>
+          <td>{{ film.ReleaseDate }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

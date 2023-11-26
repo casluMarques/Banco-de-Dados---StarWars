@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %} Planets - Star Wars DB {% endblock %}
+{% block content %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Rotation Period</th>
+        <th scope="col">Orbital Period</th>
+        <th scope="col">Diameter</th>
+        <th scope="col">Gravity</th>
+        <th scope="col">Surface Water</th>
+        <th scope="col">Population</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for planet in planets %}
+        <tr>
+          <th scope="row">{{ planet.Name | title }}</th>
+          <td>{{ planet.RotationPeriod or "unknown" }}</td>
+          <td>{{ planet.OrbitalPeriod or "unknown" }}</td>
+          <td>{{ planet.Diameter or "unknown" }}</td>
+          <td>{{ planet.Gravity or "unknown" }}</td>
+          <td>{{ planet.SurfaceWater or "unknown" }}</td>
+          <td>{{ planet.Population or "unknown" }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
